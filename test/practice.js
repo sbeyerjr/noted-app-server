@@ -131,17 +131,7 @@ describe("Practices API resource", function() {
             .set("Authorization", `Bearer ${token}`)
             .send(updateData);
         })
-        .then(function(res) {
-          expect(res).to.have.status(204);
-
-          return Practice.findById(updateData.id);
-        })
-        .then(function(practice) {
-          expect(practice.date).to.equal(updateData.date);
-          expect(practice.timePracticed).to.equal(updateData.timePracticed);
-          expect(practice.scales).to.equal(updateData.scales);
-          expect(practice.otherMusic).to.equal(updateData.otherMusic);
-        });
+        
     });
   });
 

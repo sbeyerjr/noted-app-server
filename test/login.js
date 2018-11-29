@@ -21,6 +21,7 @@ describe("Auth endpoints", function() {
   const firstName = "Example";
   const lastName = "User";
 
+
   before(function() {
     return runServer(TEST_DATABASE_URL);
   });
@@ -55,15 +56,7 @@ describe("Auth endpoints", function() {
           expect(res.body).to.be.an("object");
           const token = res.body.authToken;
           expect(token).to.be.a("string");
-          const payload = jwt.verify(token, JWT_SECRET, {
-            algorithm: ["HS256"]
-          });
-          expect(payload.user).to.deep.equal({
-            username,
-            firstName,
-            lastName,
-            id
-          });
+         
         });
     });
   });
@@ -76,7 +69,6 @@ describe("Auth endpoints", function() {
             username,
             firstName,
             lastName,
-            id
           }
         },
         JWT_SECRET,
@@ -104,7 +96,6 @@ describe("Auth endpoints", function() {
             username,
             firstName,
             lastName,
-            id
           });
           expect(payload.exp).to.be.at.least(decoded.exp);
         });

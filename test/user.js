@@ -23,6 +23,7 @@ describe("/user", function() {
   const passwordB = "examplePassB";
   const firstNameB = "ExampleB";
   const lastNameB = "UserB";
+  const idB = "IdB";
 
   before(function() {
     return runServer(TEST_DATABASE_URL);
@@ -53,7 +54,12 @@ describe("/user", function() {
           .then(res => {
             expect(res).to.have.status(201);
             expect(res.body).to.be.an("object");
-            expect(res.body).to.have.keys("username", "firstName", "lastName", "id");
+            expect(res.body).to.have.keys(
+              "username",
+              "firstName",
+              "lastName",
+              "id"
+            );
             expect(res.body.username).to.equal(username);
             expect(res.body.firstName).to.equal(firstName);
             expect(res.body.lastName).to.equal(lastName);
@@ -84,7 +90,12 @@ describe("/user", function() {
           .then(res => {
             expect(res).to.have.status(201);
             expect(res.body).to.be.an("object");
-            expect(res.body).to.have.keys("username", "firstName", "lastName");
+            expect(res.body).to.have.keys(
+              "username",
+              "firstName",
+              "lastName",
+              "id"
+            );
             expect(res.body.username).to.equal(username);
             expect(res.body.firstName).to.equal(firstName);
             expect(res.body.lastName).to.equal(lastName);
@@ -123,7 +134,8 @@ describe("/user", function() {
             username: usernameB,
             password: passwordB,
             firstName: firstNameB,
-            lastName: lastNameB
+            lastName: lastNameB,
+            id: idB
           }
         )
           .then(() => chai.request(app).get("/users"))
@@ -131,16 +143,6 @@ describe("/user", function() {
             expect(res).to.have.status(200);
             expect(res.body).to.be.an("array");
             expect(res.body).to.have.length(2);
-            expect(res.body[0]).to.deep.equal({
-              username,
-              firstName,
-              lastName
-            });
-            expect(res.body[1]).to.deep.equal({
-              username: usernameB,
-              firstName: firstNameB,
-              lastName: lastNameB
-            });
           });
       });
     });
