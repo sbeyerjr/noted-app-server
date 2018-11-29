@@ -61,7 +61,8 @@ describe("Auth endpoints", function() {
           expect(payload.user).to.deep.equal({
             username,
             firstName,
-            lastName
+            lastName,
+            id
           });
         });
     });
@@ -74,7 +75,8 @@ describe("Auth endpoints", function() {
           user: {
             username,
             firstName,
-            lastName
+            lastName,
+            id
           }
         },
         JWT_SECRET,
@@ -101,7 +103,8 @@ describe("Auth endpoints", function() {
           expect(payload.user).to.deep.equal({
             username,
             firstName,
-            lastName
+            lastName,
+            id
           });
           expect(payload.exp).to.be.at.least(decoded.exp);
         });

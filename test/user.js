@@ -53,7 +53,7 @@ describe("/user", function() {
           .then(res => {
             expect(res).to.have.status(201);
             expect(res.body).to.be.an("object");
-            expect(res.body).to.have.keys("username", "firstName", "lastName");
+            expect(res.body).to.have.keys("username", "firstName", "lastName", "id");
             expect(res.body.username).to.equal(username);
             expect(res.body.firstName).to.equal(firstName);
             expect(res.body.lastName).to.equal(lastName);
