@@ -1,0 +1,7 @@
+deploy:
+  provider: heroku
+  api_key:
+    secure: VECeNjr/KRFcFJ3blu0yPMNtbSR2TNIz+ftwugl8+U3KKvpO/U69LE3uPBifOKB3O74Cb8POdPiJrrEQdLOsL/uhymSpQ0aEG45OPZCti5FN09XaKnFt7na6iwuVza7F0V0NJdrW0y/4b0cb9gghqotCjrUs4d2wovi19/kmuTQ6x75se3XHXL0A82DBiZohAjHKWGHX6prhWfMyAsH2p3Oe6FBk4kyh76Lv3ioUYtVnmLv3A+12+4jhbR+5yCh5dToanCm5n+YZSbSdwr0FLXXhBQ04zS37ZeB2hwy18OykUlDKJjeK67ww9sXaqPptVb/bUtUHvxGLnJC26Sefeb915amKXNXjNVR4uM2XSex76tu1H9yFwTr4bY0RCTrELIEJ3rq+7a4yNuFyv+OIP8nBcigmLPAZILzN9f4gtcSr8UpIczDaQwXdR1mYHRIkbyXtQ+HHQR6M+e9zrj2WCsjOGYRwwHqfaSdOojK+lGuapmoVg8HzunaDMi0A/UBsiQPT/XUdRwkTStekb2QOvRZ0fEIMNUys7Yi6a11FdJM6qheBQ6ZEcOyKqM8JBs03JXauCFqyMd2Zfs6CkCA0l+7qwGyL499IrerOQdFb72B36h1QG7r/lZmnKZIfhW5IaHPX2i+0vCf+1uJtCC6LR86YcwjPWchSqpW9uRhfkho=
+  app:  floating-reef-61967
+  on:
+    repo: sbeyerjr/noted-app-server
